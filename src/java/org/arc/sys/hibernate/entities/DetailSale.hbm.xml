@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Jun 17, 2012 4:00:51 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="org.arc.sys.hibernate.entities.DetailSale" table="setail_sale">
+    <class name="org.arc.sys.hibernate.entities.DetailSale" table="detail_sale">
         <id name="detailSaleId" type="java.lang.Integer">
             <column name="DETAIL_SALE_ID" />
             <generator class="identity" />
