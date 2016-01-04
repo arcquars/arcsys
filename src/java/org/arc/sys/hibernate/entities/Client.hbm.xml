@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-04-2015 08:05:08 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Client" table="client" optimistic-lock="version">
+        <id name="clientId" type="java.lang.Long">
+            <column name="CLIENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="razonSocial" type="string">
+            <column name="RAZONSOCIAL" length="500" />
+        </property>
+        <property name="nameInvoice" type="string">
+            <column name="NAME_INVOICE" length="500" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="500" />
+        </property>
+        <property name="latitud" type="string">
+            <column name="LATITUD" length="500" />
+        </property>
+        <property name="longitud" type="string">
+            <column name="LONGITUD" length="500" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="45" />
+        </property>
+        <property name="fax" type="string">
+            <column name="FAX" length="45" />
+        </property>
+        <property name="url" type="string">
+            <column name="URL" length="250" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="250" />
+        </property>
+        <property name="nit" type="string">
+            <column name="NIT" not-null="true" />
+        </property>
+        <property name="attendant" type="string">
+            <column name="ATTENDANT" />
+        </property>
+        <property name="zone" type="string">
+            <column name="ZONE" />
+        </property>
+        <many-to-one name="person" class="org.arc.sys.hibernate.entities.Person" column="PERSON_ID" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>

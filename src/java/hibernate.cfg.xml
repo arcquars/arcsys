@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!--    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/arcsys</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">..pepito</property>-->
+    <property name="connection.datasource">jdbc/arcsys</property>
+    <property name="hibernate.show_sql">true</property>
+    <!--<property name="hibernate.current_session_context_class">thread</property>-->
+    <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+    <!--<property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>-->
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="org/arc/sys/hibernate/entities/UserRol.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Function.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Rol.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Branch.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Client.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/EmpProd.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Commission.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Person.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Sale.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/User.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/RecordProducto.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/RecordProductBranch.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Stock.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/PaymentSale.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Buy.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/CreditSale.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Product.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Employee.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Delivery.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/RolFun.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Category.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Payment.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Provider.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Credit.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Factory.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Detailbuy.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/DetailSale.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/DetailRefund.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Refund.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/Reserve.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/PriceSale.hbm.xml"/>
+    <mapping resource="org/arc/sys/hibernate/entities/SalesAmount.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

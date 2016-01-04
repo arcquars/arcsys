@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-04-2015 08:05:08 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.EmpProd" table="emp_prod" optimistic-lock="version">
+        <id name="empProdId" type="java.lang.Integer">
+            <column name="EMP_PROD_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="long">
+            <column name="PRODUCT_ID" not-null="true" />
+        </property>
+        <property name="employeeId" type="long">
+            <column name="EMPLOYEE_ID" not-null="true" />
+        </property>
+        <property name="commission" type="long">
+            <column name="COMMISSION" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

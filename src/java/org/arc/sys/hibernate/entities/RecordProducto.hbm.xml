@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2012 4:50:53 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.RecordProducto" table="record_producto">
+        <id name="rpId" type="java.lang.Integer">
+            <column name="RP_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="active" type="string">
+            <column name="ACTIVE" length="150" />
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="AMOUNT" />
+        </property>
+        <property name="date" type="timestamp">
+            <column name="DATE" length="19" />
+        </property>
+        <property name="total" type="double">
+            <column name="TOTAL" precision="12" scale="0" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" />
+        </property>
+        <many-to-one name="product" class="org.arc.sys.hibernate.entities.Product" column="PRODUCT_ID" cascade="all" not-null="true" />
+        <many-to-one name="buy" class="org.arc.sys.hibernate.entities.Buy" column="BUY_ID" cascade="all" not-null="false" />
+        <many-to-one name="delivery" class="org.arc.sys.hibernate.entities.Delivery" column="DELIVERY_ID" cascade="all" not-null="false" />
+        <many-to-one name="detailRefund" class="org.arc.sys.hibernate.entities.DetailRefund" column="REFUND_ID" cascade="all" not-null="false" />
+        <many-to-one name="sale" class="org.arc.sys.hibernate.entities.DetailSale" column="SALE_ID" cascade="all" not-null="false" />
+    </class>
+</hibernate-mapping>

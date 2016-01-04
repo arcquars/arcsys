@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 17, 2012 10:22:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Refund" table="refund">
+        <id name="refId" type="java.lang.Integer">
+            <column name="REF_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="dateRefund" type="timestamp">
+            <column name="DATE_REFUND" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="USERID" not-null="true" />
+        </property>
+        <property name="total" type="int">
+            <column name="TOTAL" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" />
+        </property>
+    </class>
+</hibernate-mapping>

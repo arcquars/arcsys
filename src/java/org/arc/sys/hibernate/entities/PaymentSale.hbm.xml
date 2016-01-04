@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-07-2015 06:18:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.PaymentSale" table="payment_sale" optimistic-lock="version">
+        <id name="paymentId" type="java.lang.Long">
+            <column name="PAYMENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userid" type="long">
+            <column name="USERID" not-null="true" />
+        </property>
+        <property name="amount" type="double">
+            <column name="AMOUNT" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" not-null="true" />
+        </property>
+        <many-to-one name="creditSale" class="org.arc.sys.hibernate.entities.CreditSale" fetch="select">
+            <column name="CREDIT_SALE" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

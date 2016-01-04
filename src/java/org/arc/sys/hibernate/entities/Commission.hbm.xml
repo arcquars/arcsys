@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-04-2015 08:05:08 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Commission" table="commission" optimistic-lock="version">
+        <id name="commissionId" type="java.lang.Integer">
+            <column name="COMMISSION_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="amount" type="long">
+            <column name="AMOUNT" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="state" type="java.lang.Short">
+            <column name="STATE" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+        <many-to-one name="product" class="org.arc.sys.hibernate.entities.Product" column="PRODUCT_ID" cascade="all" not-null="true" />
+        <many-to-one name="sale" class="org.arc.sys.hibernate.entities.Sale" column="SALE_ID" cascade="all" not-null="true" />
+        <many-to-one name="employed" class="org.arc.sys.hibernate.entities.Employee" column="EMPLOYED" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2012 4:50:53 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Buy" table="buy">
+        <id name="buyid" type="java.lang.Integer">
+            <column name="BUYID" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="USERID" />
+        </property>
+        <property name="dateBuy" type="timestamp">
+            <column name="DATE_BUY" not-null="true" />
+        </property>
+        <property name="total" type="double">
+            <column name="TOTAL" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" not-null="true" />
+        </property>
+        <many-to-one name="provider" class="org.arc.sys.hibernate.entities.Provider" column="PROVIDER_ID" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>

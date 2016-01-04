@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2012 4:50:53 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Person" table="person">
+        <id name="perId" type="java.lang.Integer">
+            <column name="PER_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="names" type="string">
+            <column name="NAMES" length="100" not-null="true" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="FIRSTNAME" length="100" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="LASTNAME" length="100" not-null="true" />
+        </property>
+        <property name="ci" type="int">
+            <column name="CI" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="100" not-null="true" />
+        </property>
+        <property name="phoneAddress" type="java.lang.Integer">
+            <column name="PHONE_ADDRESS" />
+        </property>
+        <property name="phoneMobil" type="java.lang.Integer">
+            <column name="PHONE_MOBIL" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="70" />
+        </property>
+        <property name="del" type="java.lang.Boolean">
+            <column name="DEL" />
+        </property>
+    </class>
+</hibernate-mapping>

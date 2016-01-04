@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 6, 2012 7:57:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Payment" table="payment">
+        <id name="paymentId" type="java.lang.Integer">
+            <column name="PAYMENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="int">
+            <column name="USERID" not-null="true" />
+        </property>
+        <property name="amount" type="double">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="datePayment" type="timestamp">
+            <column name="DATE_PAYMENT" length="19" not-null="true" />
+        </property>
+        <property name="del" type="java.lang.Boolean">
+            <column name="DEL" />
+        </property>
+        <many-to-one name="credit" class="org.arc.sys.hibernate.entities.Credit" column="CREDIT_ID" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 17, 2012 4:00:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.DetailSale" table="setail_sale">
+        <id name="detailSaleId" type="java.lang.Integer">
+            <column name="DETAIL_SALE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="amount" type="double">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="coste" type="double">
+            <column name="COSTE" precision="12" scale="0" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="gain" type="double">
+            <column name="GAIN" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="total" type="double">
+            <column name="TOTAL" precision="12" scale="0" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" />
+        </property>
+        <many-to-one name="sale" class="org.arc.sys.hibernate.entities.Sale" column="SAL_ID" cascade="all" not-null="true" />
+        <many-to-one name="product" class="org.arc.sys.hibernate.entities.Product" column="PRODUCT_ID" cascade="all" not-null="true" />
+        <many-to-one name="branch" class="org.arc.sys.hibernate.entities.Branch" column="BRANCH_ID" cascade="all" not-null="false" />
+    </class>
+</hibernate-mapping>

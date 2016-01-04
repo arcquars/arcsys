@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 6, 2012 7:57:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Credit" table="credit">
+        <id name="creditId" type="java.lang.Integer">
+            <column name="CREDIT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="int">
+            <column name="USERID" not-null="true" />
+        </property>
+        <property name="total" type="double">
+            <column name="TOTAL" not-null="true" />
+        </property>
+        <property name="canceled" type="boolean">
+            <column name="CANCELED" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" not-null="true" />
+        </property>
+        <many-to-one name="buy" class="org.arc.sys.hibernate.entities.Buy" column="BUYID" cascade="all" not-null="false" />
+    </class>
+</hibernate-mapping>

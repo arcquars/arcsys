@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2012 4:53:01 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Detailbuy" table="detailbuy">
+        <id name="detailBuyId" type="java.lang.Integer">
+            <column name="DETAIL_BUY_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="amount" type="int">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="consumed" type="int">
+            <column name="CONSUMED" not-null="true" />
+        </property>
+        <property name="priceBuy" type="double">
+            <column name="PRICE_BUY" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="totalBuy" type="double">
+            <column name="TOTAL" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="exist" type="boolean">
+            <column name="EXIST" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" not-null="true" />
+        </property>
+        <many-to-one name="product" class="org.arc.sys.hibernate.entities.Product" column="PRODUCT_ID" cascade="all" not-null="true" />
+        <many-to-one name="buy" class="org.arc.sys.hibernate.entities.Buy" column="BUYID" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>

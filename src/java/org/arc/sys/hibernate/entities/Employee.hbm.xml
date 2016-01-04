@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2012 4:50:53 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.Employee" table="employee">
+        <id name="empId" type="java.lang.Integer">
+            <column name="EMP_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="position" type="string">
+            <column name="POSITION" length="100" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" not-null="true" />
+        </property>
+        <many-to-one name="person" class="org.arc.sys.hibernate.entities.Person" column="PER_ID" cascade="all" not-null="true" />
+        <many-to-one name="branch" class="org.arc.sys.hibernate.entities.Branch" column="BRANCH_ID" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>

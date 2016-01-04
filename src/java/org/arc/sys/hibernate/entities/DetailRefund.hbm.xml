@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 17, 2012 10:22:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.arc.sys.hibernate.entities.DetailRefund" table="detail_refund">
+        <id name="detailRefundId" type="java.lang.Integer">
+            <column name="DETAIL_REFUND_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="amount" type="int">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" not-null="true" />
+        </property>
+        <many-to-one name="product" class="org.arc.sys.hibernate.entities.Product" column="PRODUCT_ID" cascade="all" not-null="true" />
+        <many-to-one name="branch" class="org.arc.sys.hibernate.entities.Branch" column="BRANCH_ID" cascade="all" not-null="true" />
+        <many-to-one name="refund" class="org.arc.sys.hibernate.entities.Refund" column="REF_ID" cascade="all" not-null="true" />
+    </class>
+</hibernate-mapping>
